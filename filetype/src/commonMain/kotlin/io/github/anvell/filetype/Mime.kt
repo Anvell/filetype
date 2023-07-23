@@ -5,7 +5,10 @@ package io.github.anvell.filetype
  * indicates the nature and format of a document, file, or assortment of bytes.
  * MIME types are defined and standardized in IETF's RFC 6838.
  */
-public object Mime {
+public data class Mime(
+    val type: Type,
+    val subtype: Subtype
+) {
     /**
      * The [Type] represents the general category into which
      * the data type falls, such as video or text.
@@ -35,16 +38,17 @@ public object Mime {
 
     /**
      * Formats [Type]-[Subtype] pair as RFC 6838 string.
+     */
+    public override fun toString(): String = "$type/$subtype"
+
+    /**
+     * Formats [Type]-[Subtype] pair as RFC 6838 string.
      * Optional parameter may be added to provide
      * additional details.
      */
-    public fun Pair<Type, Subtype>.mimeString(
-        parameter: Pair<String, String>? = null
-    ): String {
-        val parameterPart = parameter
-            ?.let { (k, v) -> ";$k=$v" }
-            ?: ""
+    public fun toString(parameter: Pair<String, String>): String {
+        val (k, v) = parameter
 
-        return "$first/$second$parameterPart"
+        return "${toString()};$k=$v"
     }
 }

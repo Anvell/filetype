@@ -1,18 +1,17 @@
 package io.github.anvell.filetype
 
-import io.github.anvell.filetype.Mime.mimeString
 import io.kotest.core.spec.style.StringSpec
 import io.kotest.matchers.shouldBe
 
 class MimeTest : StringSpec({
 
-    "Mime pair formats as a string" {
+    "Formats as a string with parameter" {
         val type = Mime.Type.Text
         val subtype = Mime.Subtype("html")
         val sample = "$type/$subtype;charset=utf-8"
         val param = "charset" to "utf-8"
-        val mimetype = type to subtype
+        val mimetype = Mime(type, subtype)
 
-        mimetype.mimeString(param) shouldBe sample
+        mimetype.toString(param) shouldBe sample
     }
 })
