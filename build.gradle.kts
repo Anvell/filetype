@@ -6,14 +6,23 @@ import org.jetbrains.kotlin.util.capitalizeDecapitalize.toLowerCaseAsciiOnly
 plugins {
     alias(libs.plugins.kotlin.multiplatform) apply false
     alias(libs.plugins.dokka)
-    alias(libs.plugins.kotlinter)
+    alias(libs.plugins.spotless)
     alias(libs.plugins.dependency.updates)
 }
 
-val kotlinterId = libs.plugins.kotlinter.get().pluginId
+val spotlessId = libs.plugins.spotless.get().pluginId
 
 allprojects {
-    apply { plugin(kotlinterId) }
+    apply { plugin(spotlessId) }
+
+    spotless {
+        kotlin {
+            target("**/*.kt")
+            targetExclude("$buildDir/**/*.kt")
+            targetExclude("bin/**/*.kt")
+            ktlint(libs.versions.ktlint.get())
+        }
+    }
 
     repositories {
         mavenCentral()

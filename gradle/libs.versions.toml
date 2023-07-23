@@ -1,14 +1,15 @@
 [versions]
 kotlin = "1.8.10"
-kotlinter = "3.15.0"
 kotest = "5.5.4"
+ktlint = "0.50.0"
+spotless = "6.20.0"
 dependency-updates = "0.47.0"
 
 [plugins]
 kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
 kotest-multiplatform = { id = "io.kotest.multiplatform", version.ref = "kotest" }
 dokka = { id = "org.jetbrains.dokka", version.ref = "kotlin" }
-kotlinter = { id = "org.jmailen.kotlinter", version.ref = "kotlinter" }
+spotless = { id = "com.diffplug.spotless", version.ref = "spotless" }
 dependency-updates = { id = "com.github.ben-manes.versions", version.ref = "dependency-updates" }
 
 [libraries]
