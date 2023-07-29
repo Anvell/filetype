@@ -4,10 +4,11 @@ package io.github.anvell.filetype
 
 import io.github.anvell.filetype.Mime.Subtype
 import io.github.anvell.filetype.Mime.Type
+import io.github.anvell.filetype.matchers.DocumentMatchers
 import io.github.anvell.filetype.matchers.ImageMatchers
 
 object FileType {
-    private val DefaultMatchers: Map<Mime, Matcher> = ImageMatchers
+    private val DefaultMatchers: Map<Mime, Matcher> = ImageMatchers + DocumentMatchers
 
     fun interface Matcher {
         operator fun invoke(buffer: ByteArray): Boolean
@@ -22,6 +23,14 @@ object FileType {
         }
 
         return null
+    }
+
+    /**
+     * Detectable document [Mime].
+     */
+    object Document {
+        val Pdf = Mime(Type.Application, Subtype("pdf"))
+        val Rtf = Mime(Type.Application, Subtype("rtf"))
     }
 
     /**
