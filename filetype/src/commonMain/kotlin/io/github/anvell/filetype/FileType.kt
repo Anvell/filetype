@@ -4,11 +4,14 @@ package io.github.anvell.filetype
 
 import io.github.anvell.filetype.Mime.Subtype
 import io.github.anvell.filetype.Mime.Type
+import io.github.anvell.filetype.matchers.CredentialsMatchers
 import io.github.anvell.filetype.matchers.DocumentMatchers
 import io.github.anvell.filetype.matchers.ImageMatchers
 
 object FileType {
-    private val DefaultMatchers: Map<Mime, Matcher> = ImageMatchers + DocumentMatchers
+    private val DefaultMatchers: Map<Mime, Matcher> = ImageMatchers +
+        CredentialsMatchers +
+        DocumentMatchers
 
     fun interface Matcher {
         operator fun invoke(buffer: ByteArray): Boolean
@@ -23,6 +26,16 @@ object FileType {
         }
 
         return null
+    }
+
+    /**
+     * Detectable credentials [Mime].
+     */
+    object Credentials {
+        val Jks = Mime(Type.Application, Subtype("x-java-keystore"))
+        val Kdbx = Mime(Type.Application, Subtype("x-keepass"))
+        val OpenSshPrivateKey = Mime(Type.Application, Subtype("openssh-private-key"))
+        val Pem = Mime(Type.Application, Subtype("pem-certificate-chain"))
     }
 
     /**
