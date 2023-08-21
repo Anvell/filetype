@@ -4,8 +4,8 @@ import io.github.anvell.filetype.FileType
 import io.github.anvell.filetype.extensions.b
 import io.github.anvell.filetype.extensions.matchSignature
 
-private val Jks = FileType.Matcher { buffer ->
-    buffer.matchSignature(
+private val Jks = FileType.Matcher { buf ->
+    buf.matchSignature(
         0xFE.b,
         0xED.b,
         0xFE.b,
@@ -13,8 +13,8 @@ private val Jks = FileType.Matcher { buffer ->
     )
 }
 
-private val Kdbx = FileType.Matcher { buffer ->
-    buffer.matchSignature(
+private val Kdbx = FileType.Matcher { buf ->
+    buf.matchSignature(
         0x03.b,
         0xd9.b,
         0xa2.b,
@@ -26,8 +26,8 @@ private val Kdbx = FileType.Matcher { buffer ->
     )
 }
 
-private val OpenSshPrivateKey = FileType.Matcher { buffer ->
-    buffer.matchSignature(
+private val OpenSshPrivateKey = FileType.Matcher { buf ->
+    buf.matchSignature(
         0x2D, 0x2D, 0x2D, 0x2D, 0x2D, 0x42, 0x45,
         0x47, 0x49, 0x4E, 0x20, 0x4F, 0x50, 0x45,
         0x4E, 0x53, 0x53, 0x48, 0x20, 0x50, 0x52,
@@ -36,8 +36,8 @@ private val OpenSshPrivateKey = FileType.Matcher { buffer ->
     )
 }
 
-private val Pem = FileType.Matcher { buffer ->
-    buffer.matchSignature(
+private val Pem = FileType.Matcher { buf ->
+    buf.matchSignature(
         0x2D, 0x2D, 0x2D, 0x2D, 0x2D, 0x42, 0x45,
         0x47, 0x49, 0x4E, 0x20, 0x43, 0x45, 0x52,
         0x54, 0x49, 0x46, 0x49, 0x43, 0x41, 0x54,
