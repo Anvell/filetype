@@ -73,15 +73,15 @@ object FileType {
     }
 
     object Video {
+        val Avi = videoMime("avi")
+        val Flv = videoMime("flv")
         val M4v = videoMime("m4v")
         val Mkv = videoMime("mkv")
-        val Webm = videoMime("webm")
         val Mov = videoMime("mov")
-        val Avi = videoMime("avi")
-        val Wmv = videoMime("wmv")
-        val Mpeg = videoMime("mpeg")
-        val Flv = videoMime("flv")
         val Mp4 = videoMime("mp4")
+        val Mpeg = videoMime("mpeg")
+        val Webm = videoMime("webm")
+        val Wmv = videoMime("wmv")
 
         private fun videoMime(
             subtype: String
