@@ -7,10 +7,12 @@ import io.github.anvell.filetype.Mime.Type
 import io.github.anvell.filetype.matchers.CredentialsMatchers
 import io.github.anvell.filetype.matchers.DocumentMatchers
 import io.github.anvell.filetype.matchers.ImageMatchers
+import io.github.anvell.filetype.matchers.VideoMatchers
 
 object FileType {
     private val DefaultMatchers: Map<Mime, Matcher> = ImageMatchers +
         CredentialsMatchers +
+        VideoMatchers +
         DocumentMatchers
 
     fun interface Matcher {
@@ -68,5 +70,21 @@ object FileType {
         private fun imageMime(
             subtype: String
         ) = Mime(Type.Image, Subtype(subtype))
+    }
+
+    object Video {
+        val Avi = videoMime("avi")
+        val Flv = videoMime("flv")
+        val M4v = videoMime("m4v")
+        val Mkv = videoMime("mkv")
+        val Mov = videoMime("mov")
+        val Mp4 = videoMime("mp4")
+        val Mpeg = videoMime("mpeg")
+        val Webm = videoMime("webm")
+        val Wmv = videoMime("wmv")
+
+        private fun videoMime(
+            subtype: String
+        ) = Mime(Type.Video, Subtype(subtype))
     }
 }
