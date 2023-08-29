@@ -18,6 +18,7 @@ private val TestData = listOf(
     "sample.jxr" to Image.Jxr,
     "sample.png" to Image.Png,
     "sample.psd" to Image.Psd,
+    "sample.svg" to Image.Svg,
     "sample.tif" to Image.Tiff,
     "sample.webp" to Image.Webp
 )

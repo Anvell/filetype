@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <title>ic_filetype_img</title>
+    <defs/>
+    <g id="ic_filetype_img" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-2" transform="translate(4.211970, 4.000000)">
+            <g id="Group" transform="translate(0.000000, 0.248860)" stroke="#000000" stroke-linecap="round"
+               stroke-linejoin="round" stroke-width="1.5">
+                <path
+                    d="M0.597100308,5.04404728 L0.597100308,2.149234 C0.597100308,1.23565616 1.44461757,0.495054987 2.4900831,0.495054987 L15.7409627,0.495054987 L15.7409627,5.04404728 L15.7409627,13.3826661 C15.7409627,14.296244 14.8934454,15.0368452 13.8479799,15.0368452 L3.51464357,15.0368452"
+                    id="Shape"/>
+            </g>
+            <path d="M3.92207596,7.2227265 L11.1477401,8.28850721 L11.266725,20.2529123" id="Shape" stroke="#000000"
+                  stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                  transform="translate(7.594400, 13.737819) rotate(-54.000000) translate(-7.594400, -13.737819) "/>
+            <path d="M11.0582818,7.0050998 L13.4979642,7.23811169 L13.4493335,13.3431962" id="Shape-Copy"
+                  stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                  transform="translate(12.278123, 10.174148) rotate(-54.000000) translate(-12.278123, -10.174148) "/>
+            <circle id="Oval-2" stroke="#030D10" cx="12.2635554" cy="4.0679819" r="1.06045993"/>
+        </g>
+    </g>
+</svg>
