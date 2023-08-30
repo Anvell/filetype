@@ -58,6 +58,19 @@ private val Psd = FileType.Matcher { buf ->
     buf.matchSignature(0x38.b, 0x42.b, 0x50.b, 0x53.b)
 }
 
+private const val XmlTag = "?xml"
+private const val SvgTag = "svg"
+private const val SvgNs = "xmlns=\"http://www.w3.org/2000/svg\""
+
+private val Svg = FileType.Matcher { buf ->
+    with(buf.decodeToString()) {
+        trimStart().startsWith('<') &&
+            contains("<$XmlTag", true) &&
+            contains("<$SvgTag", true) &&
+            contains(SvgNs, true)
+    }
+}
+
 private val Tiff = FileType.Matcher { buf ->
     if (buf.size <= 10) return@Matcher false
 
@@ -92,5 +105,6 @@ internal val ImageMatchers = mapOf(
     Image.Heif to Heif,
     Image.Dwg to Dwg,
     Image.Exr to Exr,
-    Image.Avif to Avif
+    Image.Avif to Avif,
+    Image.Svg to Svg
 )

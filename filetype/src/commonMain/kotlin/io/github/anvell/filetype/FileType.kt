@@ -64,6 +64,7 @@ object FileType {
         val Jxr = imageMime("vnd.ms-photo")
         val Png = imageMime("png")
         val Psd = imageMime("vnd.adobe.photoshop")
+        val Svg = imageMime("svg+xml")
         val Tiff = imageMime("tiff")
         val Webp = imageMime("webp")
 
